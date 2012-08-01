@@ -40,4 +40,9 @@ public class UserInfoDAOHibernate extends
 				.sqlRestriction("1=1 ORDER BY lastname, firstname"));
 	}
 
+	public UserInfo findByMail(String search) {
+		log.debug("Getting UserInfo istance by mail");
+		return findByCriteria(Restrictions.eq("mail", search)).get(0);
+	}
+
 }

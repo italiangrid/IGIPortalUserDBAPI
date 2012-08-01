@@ -9,8 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.italiangrid.portal.dbapi.dao.generic.IdpDAO;
 import it.italiangrid.portal.dbapi.dao.generic.UserInfoDAO;
-import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.Idp;
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
@@ -88,6 +88,13 @@ public class UserInfoServiceImpl implements UserInfoService {
 	public UserInfo findByUsername(String username) {
 		log.debug("NEW *** getting all UserInfo instance");
 		return userInfoDAO.findByUsername(username);
+		//return userInfoDAO.getUserInfoByUsername(username);
+	}
+	
+	@Transactional
+	public UserInfo findByMail(String mail) {
+		log.debug("NEW *** getting all UserInfo instance");
+		return userInfoDAO.findByMail(mail);
 		//return userInfoDAO.getUserInfoByUsername(username);
 	}
 

@@ -10,4 +10,6 @@ public interface VoDAO extends GenericDAO<Vo, Integer> {
 	
 	List<Vo> findAll(String search);
 
+	Vo findByName(String string);
+
 }

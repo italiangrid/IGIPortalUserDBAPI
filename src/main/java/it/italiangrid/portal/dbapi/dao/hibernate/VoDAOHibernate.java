@@ -36,6 +36,11 @@ public class VoDAOHibernate extends GenericHibernateDAO<Vo, Integer> implements 
 		log.debug("Searching VO instances");
         return findByCriteria( Restrictions.ilike("vo", search, MatchMode.ANYWHERE), Restrictions.sqlRestriction("1=1 ORDER BY vo"));
     }
+
+	public Vo findByName(String search) {
+		log.debug("Searching VO by name");
+		return findByCriteria(Restrictions.eq("vo", search)).get(0);
+	}
 	
 	
 }

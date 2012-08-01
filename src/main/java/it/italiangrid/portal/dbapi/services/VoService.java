@@ -16,4 +16,6 @@ public interface VoService {
 
 	public List<Vo> getAllVoByName(String search);
 
+	public Vo findByName(String search);
+
 }

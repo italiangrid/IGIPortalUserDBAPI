@@ -47,4 +47,9 @@ public class VoServiceImpl implements VoService {
 		return voDAO.findAll(search);
 	}
 
+	@Transactional
+	public Vo findByName(String search) {
+		return voDAO.findByName(search);
+	}
+
 }

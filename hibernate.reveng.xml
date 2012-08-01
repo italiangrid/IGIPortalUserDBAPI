@@ -25,10 +25,12 @@
 	<table-filter match-name="certificate"></table-filter>
 	<table-filter match-name="userInfo"></table-filter>
 	<table-filter match-name="userToVO"></table-filter>
+	<table-filter match-name="notify"></table-filter>
 
 	<table catalog="PortalUser" name="userToVO"></table>
 	<table catalog="PortalUser" name="IDP"></table>
 	<table catalog="PortalUser" name="certificate"></table>
 	<table catalog="PortalUser" name="userInfo"></table>
 	<table catalog="PortalUser" name="VO"></table>
+	<table catalog="PortalUser" name="notify"></table>
 </hibernate-reverse-engineering>

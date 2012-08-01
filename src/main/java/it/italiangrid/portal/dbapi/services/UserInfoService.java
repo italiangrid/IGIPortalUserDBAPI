@@ -23,5 +23,7 @@ public interface UserInfoService {
 	public List<UserInfo> getAllUserInfoByName(String search);
 	
 	public UserInfo findByUsername(String username);
+	
+	public UserInfo findByMail(String username);
 
 }
