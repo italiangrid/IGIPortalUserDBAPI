@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 public class NotifyDAOHibernate extends GenericHibernateDAO<Notify, Integer> implements NotifyDAO {
 
 	public Notify findByUserInfo(UserInfo userInfo) {
-		
+		if(findByCriteria(Restrictions.eq("userInfo", userInfo)).isEmpty())
+			return null;
 		return findByCriteria(Restrictions.eq("userInfo", userInfo)).get(0);
 	}
 
