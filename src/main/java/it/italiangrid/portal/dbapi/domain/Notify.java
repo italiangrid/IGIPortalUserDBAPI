@@ -33,6 +33,7 @@ public class Notify implements java.io.Serializable {
 
 	public Notify(UserInfo userInfo) {
 		this.userInfo = userInfo;
+		this.proxyExpire = "false";
 	}
 
 	public Notify(UserInfo userInfo, String proxyExpire) {
