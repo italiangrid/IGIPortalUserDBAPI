@@ -35,11 +35,19 @@ public class Notify implements java.io.Serializable {
 	public Notify(UserInfo userInfo) {
 		this.userInfo = userInfo;
 		this.proxyExpire = "false";
+		this.proxyExpireTime = "12:00";
 	}
-
+	
 	public Notify(UserInfo userInfo, String proxyExpire) {
 		this.userInfo = userInfo;
 		this.proxyExpire = proxyExpire;
+		this.proxyExpireTime = "12:00";
+	}
+
+	public Notify(UserInfo userInfo, String proxyExpire, String proxyExpireTime) {
+		this.userInfo = userInfo;
+		this.proxyExpire = proxyExpire;
+		this.proxyExpireTime = proxyExpireTime;
 	}
 
 	@Id
@@ -74,7 +82,7 @@ public class Notify implements java.io.Serializable {
 	
 	@Column(name = "proxyExpireTime", length = 10)
 	public String getProxyExpireTime() {
-		return this.proxyExpire;
+		return this.proxyExpireTime;
 	}
 
 	public void setProxyExpireTime(String proxyExpireTime) {
