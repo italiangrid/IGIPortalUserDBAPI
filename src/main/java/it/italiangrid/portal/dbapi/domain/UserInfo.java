@@ -120,7 +120,7 @@ public class UserInfo implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idp", nullable = false)
+	@JoinColumn(name = "idp", nullable = true)
 	public Idp getIdp() {
 		return this.idp;
 	}

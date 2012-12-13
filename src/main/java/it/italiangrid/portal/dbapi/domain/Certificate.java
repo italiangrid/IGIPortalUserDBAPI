@@ -65,7 +65,7 @@ public class Certificate implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "userId", nullable = false)
+	@JoinColumn(name = "userId", nullable = true)
 	public UserInfo getUserInfo() {
 		return this.userInfo;
 	}
