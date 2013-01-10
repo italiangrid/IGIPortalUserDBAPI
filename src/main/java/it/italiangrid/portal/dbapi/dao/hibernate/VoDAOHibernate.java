@@ -39,7 +39,11 @@ public class VoDAOHibernate extends GenericHibernateDAO<Vo, Integer> implements 
 
 	public Vo findByName(String search) {
 		log.debug("Searching VO by name");
-		return findByCriteria(Restrictions.eq("vo", search)).get(0);
+		
+		List<Vo> vos = findByCriteria(Restrictions.eq("vo", search));
+		if(vos.size()==0)
+			return null;
+		return vos.get(0);
 	}
 	
 	
