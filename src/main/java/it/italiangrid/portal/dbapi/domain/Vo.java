@@ -33,12 +33,13 @@ public class Vo implements java.io.Serializable {
 	private String middleware;
 	private Date insertTime;
 	private String aup;
+	private String configured;
 
 	public Vo() {
 	}
 
 	public Vo(String vo, String host, String description, String discipline,
-			String middleware, Date insertTime, String aup) {
+			String middleware, Date insertTime, String aup, String configured) {
 		this.vo = vo;
 		this.host = host;
 		this.description = description;
@@ -46,11 +47,12 @@ public class Vo implements java.io.Serializable {
 		this.middleware = middleware;
 		this.insertTime = insertTime;
 		this.aup = aup;
+		this.configured = configured;
 	}
 
 	public Vo(String vo, String host, String description, String voManagerMail,
 			String enrollementUrl, String discipline, String middleware,
-			Date insertTime, String aup) {
+			Date insertTime, String aup, String configured) {
 		this.vo = vo;
 		this.host = host;
 		this.description = description;
@@ -60,6 +62,7 @@ public class Vo implements java.io.Serializable {
 		this.middleware = middleware;
 		this.insertTime = insertTime;
 		this.aup = aup;
+		this.configured = configured;
 	}
 
 	@Id
@@ -153,6 +156,15 @@ public class Vo implements java.io.Serializable {
 
 	public void setAup(String aup) {
 		this.aup = aup;
+	}
+	
+	@Column(name = "configured", nullable = false, length = 6)
+	public String getConfigured() {
+		return this.configured;
+	}
+
+	public void setConfigured(String configured) {
+		this.configured = configured;
 	}
 
 }

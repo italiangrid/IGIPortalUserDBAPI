@@ -35,12 +35,13 @@ public class UserInfo implements java.io.Serializable {
 	private Idp idp;
 	private String username;
 	private String registrationComplete;
+	private String persistentId;
 
 	public UserInfo() {
 	}
 
 	public UserInfo(String firstName, String lastName, String institute,
-			String mail, Idp idp, String username, String registrationComplete) {
+			String mail, Idp idp, String username, String registrationComplete, String persistentId) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.institute = institute;
@@ -48,11 +49,12 @@ public class UserInfo implements java.io.Serializable {
 		this.idp = idp;
 		this.username = username;
 		this.registrationComplete = registrationComplete;
+		this.persistentId = persistentId;
 	}
 
 	public UserInfo(String firstName, String lastName, String institute,
 			String phone, String mail, Idp idp, String username,
-			String registrationComplete) {
+			String registrationComplete, String persistentId) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.institute = institute;
@@ -61,6 +63,7 @@ public class UserInfo implements java.io.Serializable {
 		this.idp = idp;
 		this.username = username;
 		this.registrationComplete = registrationComplete;
+		this.persistentId = persistentId;
 	}
 
 	@Id
@@ -146,5 +149,23 @@ public class UserInfo implements java.io.Serializable {
 	public void setRegistrationComplete(String registrationComplete) {
 		this.registrationComplete = registrationComplete;
 	}
+	
+	@Column(name = "persistentId", nullable = true, length = 100)
+	public String getPersistentId() {
+		return this.persistentId;
+	}
 
+	public void setPersistentId(String persistentId) {
+		this.persistentId = persistentId;
+	}
+
+	@Override
+	public String toString() {
+		return "UserInfo [userId=" + userId + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", institute=" + institute
+				+ ", phone=" + phone + ", mail=" + mail + ", idp=" + idp
+				+ ", username=" + username + ", registrationComplete="
+				+ registrationComplete + ", persistentId=" + persistentId + "]";
+	}
+	
 }

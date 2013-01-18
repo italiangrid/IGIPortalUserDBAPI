@@ -37,13 +37,14 @@ public class Certificate implements java.io.Serializable {
 	private String primaryCert;
 	private String issuer;
 	private String usernameCert;
+	private String passwordChanged;
 
 	public Certificate() {
 	}
 
 	public Certificate(UserInfo userInfo, String subject, Date expirationDate,
 			String caonline, String primaryCert, String issuer,
-			String usernameCert) {
+			String usernameCert, String passwordChanged) {
 		this.userInfo = userInfo;
 		this.subject = subject;
 		this.expirationDate = expirationDate;
@@ -51,6 +52,7 @@ public class Certificate implements java.io.Serializable {
 		this.primaryCert = primaryCert;
 		this.issuer = issuer;
 		this.usernameCert = usernameCert;
+		this.passwordChanged = passwordChanged;
 	}
 
 	@Id
@@ -134,6 +136,24 @@ public class Certificate implements java.io.Serializable {
 				&& this.issuer.equals(cert.issuer))
 			return true;
 		return false;
+	}
+	
+	@Column(name = "passwordChanged", nullable = false, length = 6)
+	public String getPasswordChanged() {
+		return this.passwordChanged;
+	}
+
+	public void setPasswordChanged(String passwordChanged) {
+		this.passwordChanged = passwordChanged;
+	}
+
+	@Override
+	public String toString() {
+		return "Certificate [idCert=" + idCert
+				+ ", subject=" + subject + ", expirationDate=" + expirationDate
+				+ ", caonline=" + caonline + ", primaryCert=" + primaryCert
+				+ ", issuer=" + issuer + ", usernameCert=" + usernameCert
+				+ ", passwordChanged=" + passwordChanged + "]";
 	}
 
 }
