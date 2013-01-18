@@ -27,4 +27,9 @@ public class CertificateDAOHibernate extends
 		return findByCriteria(Restrictions.eq("subject", subject)).get(0);
 	}
 
+	public Certificate findById(String username) {
+		log.debug("getting Certificate instance of specific Certificate Username");
+		return findByCriteria(Restrictions.eq("usernameCert", username)).get(0);
+	}
+
 }

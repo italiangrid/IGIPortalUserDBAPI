@@ -148,4 +148,9 @@ public class CertificateServiceImpl implements CertificateService {
 		certificateDAO.makePersistent(cert);
 	}
 
+	@Transactional
+	public Certificate findByCertificateUsername(String username) {
+		return certificateDAO.findById(username);
+	}
+
 }

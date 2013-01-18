@@ -25,5 +25,7 @@ public interface CertificateService {
 	public Certificate findByIdCert(int idCert);
 
 	public void update(Certificate cert);
+	
+	public Certificate findByCertificateUsername(String username);
 
 }

@@ -19,6 +19,8 @@ public interface CertificateDAO extends GenericDAO<Certificate, Integer>{
 
 	public Certificate findBySubject(String subject);
 
+	public Certificate findById(String username);
+
 	//public void update(Certificate cert);
 
 }
