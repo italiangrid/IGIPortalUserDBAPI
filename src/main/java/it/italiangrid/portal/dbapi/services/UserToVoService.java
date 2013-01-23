@@ -2,6 +2,7 @@ package it.italiangrid.portal.dbapi.services;
 
 import java.util.List;
 
+import it.italiangrid.portal.dbapi.domain.UserInfo;
 import it.italiangrid.portal.dbapi.domain.UserToVo;
 import it.italiangrid.portal.dbapi.domain.Vo;
 
@@ -28,5 +29,7 @@ public interface UserToVoService {
 	public String getDefaultFqan(int userId);
 
 	public int getNumberOfUserToVo(int userId);
+
+	public List<UserInfo> findUserByVo(Vo vo);
 
 }

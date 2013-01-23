@@ -118,4 +118,32 @@ public class UserToVoDAOHiberante extends GenericHibernateDAO<UserToVo, UserToVo
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<UserToVo> findUserByVo(Vo vo) {
+		log.debug("getting all Certificate instance of user");
+		try {
+
+			// Create a Hibernate query (HQL)
+			Query query = getSession().createQuery("FROM  UserToVo WHERE idVO = "
+					+ vo.getIdVo());
+
+			// Retrieve all
+			return query.list();
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+
+	public UserInfo getUserByUserToVo(UserToVo utv) {
+		log.debug("getting all Certificate instance of user");
+		try {
+			return (UserInfo) getSession().get(UserInfo.class,
+					getSession().getIdentifier(utv.getUserInfo()));
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+
 }

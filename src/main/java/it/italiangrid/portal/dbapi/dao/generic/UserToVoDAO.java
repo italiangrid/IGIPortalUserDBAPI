@@ -20,5 +20,9 @@ public interface UserToVoDAO extends GenericDAO<UserToVo, UserToVoId> {
 	public int getNumberOfUserToVo(int userId);
 
 	public void deleteByIdCert(int idCert);
+	
+	public List<UserToVo> findUserByVo(Vo vo);
+
+	public UserInfo getUserByUserToVo(UserToVo utv);
 
 }

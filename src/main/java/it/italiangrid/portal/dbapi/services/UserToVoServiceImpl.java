@@ -197,4 +197,14 @@ public class UserToVoServiceImpl implements UserToVoService {
 		return userToVoDAO.getNumberOfUserToVo(userId);
 	}
 
+	@Transactional
+	public List<UserInfo> findUserByVo(Vo vo) {
+		List<UserInfo> users = new ArrayList<UserInfo>();
+		List<UserToVo> utvs = userToVoDAO.findUserByVo(vo);
+		for(UserToVo utv: utvs){
+			users.add(userToVoDAO.getUserByUserToVo(utv));
+		}
+		return users;
+	}
+
 }
