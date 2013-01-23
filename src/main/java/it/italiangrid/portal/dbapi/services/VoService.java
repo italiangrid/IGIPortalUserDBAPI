@@ -17,5 +17,9 @@ public interface VoService {
 	public List<Vo> getAllVoByName(String search);
 
 	public Vo findByName(String search);
+	
+	public void save(Vo vo);
+	
+	public void delete(Integer id);
 
 }

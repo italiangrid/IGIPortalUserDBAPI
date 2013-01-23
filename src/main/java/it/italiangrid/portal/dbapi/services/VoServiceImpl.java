@@ -51,5 +51,17 @@ public class VoServiceImpl implements VoService {
 	public Vo findByName(String search) {
 		return voDAO.findByName(search);
 	}
+	
+	@Transactional
+	public void save(Vo vo) {
+		voDAO.makePersistent(vo);
+		
+	}
+	
+	@Transactional
+	public void delete(Integer id) {
+		Vo vo = voDAO.findById(id,false);
+		voDAO.makeTransient(vo);
+	}
 
 }
