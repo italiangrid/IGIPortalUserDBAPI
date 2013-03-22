@@ -18,6 +18,9 @@
 		<sql-type jdbc-type="VARCHAR" hibernate-type="string"
 			length="75" not-null="true">
 		</sql-type>
+		<sql-type jdbc-type="LONGVARBINARY" hibernate-type="binary"
+			not-null="false">
+		</sql-type>
 	</type-mapping>
 	<table-filter match-schema="PortalUser" match-name=".*"></table-filter>
 	<table-filter match-name="IDP"></table-filter>
@@ -26,6 +29,7 @@
 	<table-filter match-name="userInfo"></table-filter>
 	<table-filter match-name="userToVO"></table-filter>
 	<table-filter match-name="notify"></table-filter>
+	<table-filter match-name="sshKeys"></table-filter>
 
 	<table catalog="PortalUser" name="userToVO"></table>
 	<table catalog="PortalUser" name="IDP"></table>
@@ -33,4 +37,5 @@
 	<table catalog="PortalUser" name="userInfo"></table>
 	<table catalog="PortalUser" name="VO"></table>
 	<table catalog="PortalUser" name="notify"></table>
+	<table catalog="PortalUser" name="sshKeys"></table>
 </hibernate-reverse-engineering>
