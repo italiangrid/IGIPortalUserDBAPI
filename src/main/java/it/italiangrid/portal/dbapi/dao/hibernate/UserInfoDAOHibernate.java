@@ -31,7 +31,10 @@ public class UserInfoDAOHibernate extends
 
 	public UserInfo findByUsername(String username) {
 		log.debug("Getting UserInfo istance by username");
-		return findByCriteria(Restrictions.eq("username", username)).get(0);
+		List<UserInfo> results = findByCriteria(Restrictions.eq("username", username));
+		if(results.isEmpty())
+			return null;
+		return results.get(0);
 	}
 
 	public List<UserInfo> findAll() {
@@ -42,7 +45,10 @@ public class UserInfoDAOHibernate extends
 
 	public UserInfo findByMail(String search) {
 		log.debug("Getting UserInfo istance by mail");
-		return findByCriteria(Restrictions.eq("mail", search)).get(0);
+		List<UserInfo> results = findByCriteria(Restrictions.eq("mail", search));
+		if(results.isEmpty())
+			return null;
+		return results.get(0);
 	}
 
 }
