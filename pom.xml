@@ -3,6 +3,18 @@
   <groupId>it.italiangrid.portal</groupId>
   <artifactId>db-api</artifactId>
   <version>0.0.1</version>
+  <build>
+  	<plugins>
+  		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<encoding>UTF-8</encoding>
+				<source>1.6</source>
+				<target>1.6</target>
+			</configuration>
+		</plugin>
+  	</plugins>
+  </build>
   <repositories>
 		<repository>
 			<releases>
