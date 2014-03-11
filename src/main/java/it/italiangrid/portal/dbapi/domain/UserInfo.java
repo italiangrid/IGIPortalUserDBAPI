@@ -20,7 +20,7 @@ import it.italiangrid.portal.dbapi.domain.Idp;
  */
 @Entity
 @Table(name = "userInfo", catalog = "PortalUser")
-public class UserInfo implements java.io.Serializable {
+public class UserInfo implements java.io.Serializable, Comparable<UserInfo> {
 
 	/**
 	 * 
@@ -166,6 +166,13 @@ public class UserInfo implements java.io.Serializable {
 				+ ", phone=" + phone + ", mail=" + mail + ", idp=" + idp
 				+ ", username=" + username + ", registrationComplete="
 				+ registrationComplete + ", persistentId=" + persistentId + "]";
+	}
+
+	public int compareTo(UserInfo other) {
+		 int last = this.lastName.compareTo(other.lastName);
+		 last =  last == 0 ? this.firstName.compareTo(other.firstName) : last;
+		 last =  last == 0 ? this.mail.compareTo(other.mail) : last;
+		 return last == 0 ? this.institute.compareTo(other.institute) : last;
 	}
 	
 }
