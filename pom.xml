@@ -29,7 +29,7 @@
 			</snapshots>
 			<id>myproxy</id>
 			<name>MyProxy API and Client</name>
-			<url>http://community.ucs.indiana.edu:9090/archiva/repository/ogce.m2.all/</url>
+			<url>https://community.ucs.indiana.edu:9090/archiva/repository/ogce.m2.all/</url>
 			<layout>default</layout>
 		</repository>
 	</repositories>
